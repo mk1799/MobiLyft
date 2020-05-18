@@ -78,7 +78,10 @@ class _section_pageState extends State<section_page> {
         drawer: Drawer(
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.grey[400],
+              gradient: LinearGradient(
+                begin: Alignment.centerRight,
+                end: Alignment.centerLeft,
+                colors: [Colors.white,Colors.blue[200],Colors.blue]),
             ),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height ,
@@ -89,12 +92,12 @@ class _section_pageState extends State<section_page> {
                   decoration: BoxDecoration(
               
               gradient: LinearGradient(
-                begin: Alignment.topRight,
-                end: Alignment.bottomLeft,
-                colors: [Colors.white60,Colors.teal,Colors.teal[100],Colors.blue,Colors.teal]),
+                begin: Alignment.centerRight,
+                end: Alignment.centerLeft,
+                colors: [Colors.white,Colors.blue[200],Colors.blue]),
             ),
                   accountName: user_name(), 
-                  accountEmail: Text(widget.email,style: TextStyle(fontWeight:FontWeight.w300,fontSize: 18.0),),
+                  accountEmail: Text(widget.email,style: TextStyle(fontWeight:FontWeight.w300,fontSize: 19.0,color: Colors.blueGrey[900]),),
                   currentAccountPicture: Align(
                         alignment: Alignment.center,
                         child: CircleAvatar(
@@ -112,6 +115,8 @@ class _section_pageState extends State<section_page> {
                 ),
                 
                 Container(
+                  
+                  
                   child:Column(
                     children: <Widget>[
                       ListTile(
@@ -132,16 +137,16 @@ class _section_pageState extends State<section_page> {
               Container(
                 child: Column(
                 children: <Widget>[
-                  Divider(color: Colors.grey,),
+                  Divider(color: Colors.teal),
                   ListTile(
                     title: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Icon(Icons.input,color: Colors.blue,size: 30.0,),
+                        Icon(Icons.input,color: Colors.teal,size: 30.0,),
                           Padding(
                             padding: const EdgeInsets.only(left:2.0,top: 1.0,bottom:1.0),
-                            child: Center(child: Text('Log Out',style: TextStyle(fontWeight: FontWeight.w300,fontSize: 30.0,color: Colors.blue),)),
+                            child: Center(child: Text('Log Out',style: TextStyle(fontWeight:FontWeight.bold ,fontSize: 30.0,color: Colors.teal),)),
                             ),
                           ],
                         ),
@@ -167,7 +172,7 @@ class _section_pageState extends State<section_page> {
               gradient: LinearGradient(
                 begin: Alignment.topRight,
                 end: Alignment.bottomLeft,
-                colors: [Colors.blue,Colors.teal,Colors.teal[100],Colors.white,Colors.white60,Colors.teal])),
+                colors: [Colors.blue[400],Colors.white,Colors.blue[200]])),
           child: ListView(
               children: <Widget>[
                 Padding(padding:EdgeInsets.only(top:30.0),
@@ -178,7 +183,7 @@ class _section_pageState extends State<section_page> {
                       fontFamily:"Merriweather",
                       fontSize: 30.0,
                       fontWeight: FontWeight.w800,
-                      color: Colors.black
+                      color: Colors.blueGrey[900]
                       ),
                     )
                   ),                
@@ -199,7 +204,7 @@ class _section_pageState extends State<section_page> {
                                 gradient: LinearGradient(
                                 begin: Alignment.topRight,
                                 end: Alignment.bottomLeft,
-                                colors: [Colors.teal[400],Colors.teal[100],Colors.blue[300]]
+                                colors: [Colors.blue[200],Colors.white]
                                 )
                               ),
                               child: RaisedButton(
@@ -234,7 +239,7 @@ class _section_pageState extends State<section_page> {
                                 gradient: LinearGradient(
                                 begin: Alignment.topRight,
                                 end: Alignment.bottomLeft,
-                                colors: [Colors.blue[300],Colors.teal[100],Colors.teal[400]]
+                                colors: [Colors.blue[300],Colors.white]
                                 )
                               ),
                               child: RaisedButton(
@@ -278,7 +283,7 @@ class _section_pageState extends State<section_page> {
                                 gradient: LinearGradient(
                                begin: Alignment.topRight,
                                 end: Alignment.bottomLeft,
-                                colors: [Colors.blue[300],Colors.teal[100],Colors.teal[400]]
+                                colors: [Colors.blue[200],Colors.white]
                                 )
                               ),
                               child: RaisedButton(
@@ -314,7 +319,7 @@ class _section_pageState extends State<section_page> {
                                 gradient: LinearGradient(
                                 begin: Alignment.topRight,
                                 end: Alignment.bottomLeft,
-                                colors: [Colors.teal[400],Colors.teal[100],Colors.blue[300]]
+                                colors: [Colors.blue[300],Colors.white]
                                 )
                               ),
                               child: RaisedButton(
@@ -358,7 +363,7 @@ class _section_pageState extends State<section_page> {
                                 gradient: LinearGradient(
                                begin: Alignment.topRight,
                                 end: Alignment.bottomLeft,
-                                colors: [Colors.teal[400],Colors.teal[100],Colors.blue[300]]
+                                colors: [Colors.blue[200],Colors.white]
                                 )
                               ),
                               child: RaisedButton(
@@ -394,7 +399,7 @@ class _section_pageState extends State<section_page> {
                                 gradient: LinearGradient(
                                begin: Alignment.topRight,
                                 end: Alignment.bottomLeft,
-                                colors: [Colors.blue[300],Colors.teal[100],Colors.teal[400]]
+                                colors: [Colors.blue[300],Colors.white]
                                 )
                               ),
                               child: RaisedButton(
@@ -438,7 +443,8 @@ class _section_pageState extends State<section_page> {
             pro.documents[i].data['name'],
             style: TextStyle(
               fontSize: 25.0,
-              fontWeight:FontWeight.w600
+              fontWeight:FontWeight.w600,
+              color: Colors.blueGrey[900],
             ),
             textAlign: TextAlign.center,
           );
