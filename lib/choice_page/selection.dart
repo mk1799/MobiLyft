@@ -7,12 +7,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:giffy_dialog/giffy_dialog.dart';
 import 'package:mobilyft/Car_Insurance/Car_Insurance_CompanyList.dart';
-import 'package:mobilyft/Car_Rent/Car_Rent_HomePage/car_rent_homepage.dart';
+import 'package:mobilyft/Car_Rent/car_rent_add_search.dart';
 import 'package:mobilyft/Car_Sell/car_sell_home.dart';
 import 'package:mobilyft/Crud_File/crud1.dart';
 import 'package:mobilyft/Login_Page/loginpage.dart';
 import 'package:mobilyft/Profile/profile.dart';
 import 'package:mobilyft/Ride_Share/HomePage/car_share_home_page.dart';
+import 'package:mobilyft/Ride_Share/maps/map.dart';
+import 'package:mobilyft/car_service/car_service.dart';
+import 'package:mobilyft/car_service/map.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class section_page extends StatefulWidget {
@@ -121,6 +124,7 @@ class _section_pageState extends State<section_page> {
                     children: <Widget>[
                       ListTile(
                         title:Text("View Profile",style: TextStyle(fontWeight:FontWeight.w500,fontSize:25.0),),
+                        
                         onTap: (){
                           Navigator.push(
                            context,
@@ -247,7 +251,7 @@ class _section_pageState extends State<section_page> {
                                 onPressed: (){
                                   Navigator.push(context, MaterialPageRoute(
                                     builder: (BuildContext context) =>
-                                              rent_homepage(email: widget.email),                                             
+                                              rent_addsearch(email: widget.email),                                             
                                     )
                                   );
                                 },
@@ -289,11 +293,11 @@ class _section_pageState extends State<section_page> {
                               child: RaisedButton(
                                 color: Colors.transparent,
                                 onPressed: (){
-                                  // Navigator.push(context, MaterialPageRoute(
-                                  //   builder: (BuildContext context) =>
-                                  //             car_ser_selection(email: widget.email),                                             
-                                  //   )
-                                  // );
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                              car_service(email: widget.email),                                        
+                                    )
+                                  );
                                 },
                                 child: Text(
                                   'Car Service',
@@ -405,11 +409,11 @@ class _section_pageState extends State<section_page> {
                               child: RaisedButton(
                                 color: Colors.transparent,
                                 onPressed: (){
-                                  // Navigator.push(context, MaterialPageRoute(
-                                  //   builder: (BuildContext context) =>
-                                  //             sell_home(email: widget.email),                                             
-                                  //   )
-                                  // );
+                                  Navigator.push(context, MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                              maps(),                                             
+                                    )
+                                  );
                                 },
                                 child: Text(
                                   'About',

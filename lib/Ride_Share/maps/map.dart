@@ -83,7 +83,7 @@ class _mapsState extends State<maps> {
       CameraPosition(
         target:
         
-        LatLng(result[0].position.latitude,result[0].position.longitude),zoom: 15.0),
+        LatLng(result[0].position.latitude,result[0].position.longitude),zoom: 30.0),
        
           
       )

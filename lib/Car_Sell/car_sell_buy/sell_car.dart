@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter_google_places/flutter_google_places.dart';
 import 'package:intl/intl.dart';
@@ -30,26 +31,26 @@ class _car_sellState extends State<car_sell> {
   DateTime ti;//=null;
   String _time = "Not Set";
   String formattedDate = DateFormat.yMMMMd("en_US").format(DateTime.now());
-  Future<bool> alert(BuildContext context) async {
-      return showDialog(
-        context: context,
-        barrierDismissible: true,
-        builder: (BuildContext context) {
-          return AlertDialog(
-            title: Center(              
-              child: Text(
-                "Select Time First!!",
-                style: TextStyle(
-                  fontSize: 22.0,
-                  color: Colors.grey[700],
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          );
-        }
-      );
-   }
+  // Future<bool> alert(BuildContext context) async {
+  //     return showDialog(
+  //       context: context,
+  //       barrierDismissible: true,
+  //       builder: (BuildContext context) {
+  //         return AlertDialog(
+  //           title: Center(              
+  //             child: Text(
+  //               "Select Time First!!",
+  //               style: TextStyle(
+  //                 fontSize: 22.0,
+  //                 color: Colors.grey[700],
+  //                 fontWeight: FontWeight.bold,
+  //               ),
+  //             ),
+  //           ),
+  //         );
+  //       }
+  //     );
+  //  }
   bool validateAndSave() {
 
     final form = formKey.currentState;
@@ -76,19 +77,19 @@ class _car_sellState extends State<car_sell> {
       'Contact number':pernum,
       'Address person':peradd,       
     };
-    Map<String, dynamic> noti = {
-      'email': widget.email,
-      // 'notice': "Your Ride From ${selectedpickup.toString()} To ${selecteddest.toString()} Is Added Successfully!",  
-      'detail' : "Get Ready For Ride\n${formattedDate}""   ""${now.hour}:${now.minute}",
-    };
+    // Map<String, dynamic> noti = {
+    //   'email': widget.email,
+    //   // 'notice': "Your Ride From ${selectedpickup.toString()} To ${selecteddest.toString()} Is Added Successfully!",  
+    //   'detail' : "Get Ready For Ride\n${formattedDate}""   ""${now.hour}:${now.minute}",
+    // };
     crudobj.adddata(data, context,"sell car").then((result) {}).catchError((e) {
       print(e);
       }
     );
-    crudobj.adddata(noti, context,"notify").then((result) {}).catchError((e) {
-      print(e);
-      }
-    );    
+    // crudobj.adddata(noti, context,"notify").then((result) {}).catchError((e) {
+    //   print(e);
+    //   }
+    // );    
   }
   
   @override
@@ -562,12 +563,14 @@ class _car_sellState extends State<car_sell> {
                         background: null,
                         fontSize: 30,
                         onPressed: () {
+
                           if (validateAndSave()) {
                             if(ti == null){
                               print("not complete!!");
-                              alert(context);
+                              // alert(context);
                             }
                             insert(context);
+                            
                             Navigator.pop(context);
                             Navigator.pop(context);
                             Navigator.push(
@@ -579,6 +582,7 @@ class _car_sellState extends State<car_sell> {
                             );
                             setState(() => autovalidate = true);                   
                           }
+                          // BotToast.showSimpleNotification(title:'Thank You');
                         }
                       )               
                     )                            

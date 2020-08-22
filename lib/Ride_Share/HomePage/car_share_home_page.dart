@@ -4,6 +4,8 @@ import 'package:mobilyft/Ride_Share/Dashboard/car_share_dashboard.dart';
 import 'package:mobilyft/Ride_Share/Notification/car_share_Notify.dart';
 import 'package:mobilyft/Ride_Share/Request/car_share_request_page.dart';
 import 'package:mobilyft/Ride_Share/Ride_create_search/car_share_ride_page.dart';
+import 'package:mobilyft/Ride_Share/Ride_create_search/map_dest.dart';
+import 'package:mobilyft/Ride_Share/Ride_create_search/map_select.dart';
 import 'package:mobilyft/Ride_Share/message/msg_response.dart';
 class Home_page extends StatefulWidget {
   final String email;
@@ -19,7 +21,7 @@ class _Home_pageState extends State<Home_page> {
       case 0:
         return Dashboard(email: widget.email);
       case 1:
-        return request_page(email: widget.email);
+        return MapPage();
       case 2:
         return Ride_Page(email: widget.email);
       case 3:

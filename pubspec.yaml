@@ -27,6 +27,9 @@ dependencies:
   slide_popup_dialog: ^0.0.2
   neuomorphic_container: ^1.0.1
   nice_button: ^0.1.7
+  carousel_pro:
+  bot_toast:
+  map_launcher:
   loading_animations: ^2.1.0
   loading_card: ^0.0.5
   flutter_feather_icons: ^1.0.3
@@ -60,6 +63,7 @@ dependencies:
   simple_autocomplete_formfield:
   autocomplete_textfield:
   intl:
+
 
   
   
@@ -104,6 +108,7 @@ flutter:
     - asets/hdfc.png
     - asets/icici.PNG
     - asets/iffco.png
+    - asets/destination_map_marker.png
     - asets/new-india.png
     - asets/orientalinsurance.png
     - asets/royalsundaram.png
